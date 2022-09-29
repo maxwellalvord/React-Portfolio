@@ -114,7 +114,7 @@ img {
   object-fit: cover;
 }
 
-/* ============================= Media Queries (Medium Devices) ====================== */
+/* ========================= Media Queries (Medium Devices) ================== */
 
 @media screen and (max-width: 1024px) {
   .container {
