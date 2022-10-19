@@ -13,28 +13,38 @@ const Experience = () => {
           <div className="experience__content">
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>HTML</h4>
-              <small className='text-light'>Experienced</small>
+              <div>
+                <h4>HTML</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>CSS</h4>
-              <small className='text-light'>Intermediate</small>
+              <div>
+                <h4>CSS</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>JavaScript</h4>
-              <small className='text-light'>Experienced</small>
+              <div>
+                <h4>JavaScript</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>BootStrap</h4>
-              <small className='text-light'>Intermediate</small>
+              <div>
+                <h4>BootStrap</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>REACT</h4>
-              <small className='text-light'> Intermediate</small>
+              <div>
+                <h4>REACT</h4>
+                <small className='text-light'> Intermediate</small>
+              </div>
             </article>
           </div>
         </div>
@@ -43,23 +53,31 @@ const Experience = () => {
           <div className="experience__content">
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>Node.js</h4>
-              <small className='text-light'>Experienced</small>
+              <div>
+                <h4>Node.js</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>MySQL</h4>
-              <small className='text-light'>Intermediate</small>
+              <div>
+                <h4>MySQL</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>FireBase</h4>
-              <small className='text-light'>Intermediate</small>
+              <div>
+                <h4>FireBase</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill />
-              <h4>ASP MVC/.NET 5</h4>
-              <small className='text-light'>Intermediate</small>
+              <div>
+                <h4>ASP MVC/.NET 5</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
             </article>
           </div>
         </div>
