@@ -36,6 +36,7 @@
 
 .contact__option h5 {
   color: var(--color-light);
+  font-size: .75rem;
 }
 
 /* ======================== FORM ======================= */
