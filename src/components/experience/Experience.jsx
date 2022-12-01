@@ -26,7 +26,7 @@ const Experience = () => {
               </div>
             </article>
             <article className='experience__details'>
-              <RiCheckboxCircleFill className='experience'/>
+              <RiCheckboxCircleFill className='experience__details-icon'/>
               <div>
                 <h4>JavaScript</h4>
                 <small className='text-light'>Experienced</small>
@@ -40,7 +40,7 @@ const Experience = () => {
               </div>
             </article>
             <article className='experience__details'>
-              <RiCheckboxCircleFill className='experienc__details-icon'/>
+              <RiCheckboxCircleFill className='experience__details-icon'/>
               <div>
                 <h4>REACT</h4>
                 <small className='text-light'> Intermediate</small>

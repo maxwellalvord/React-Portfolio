@@ -21,8 +21,11 @@ const About = () => {
           <div className="about__cards">
             <article className='about__card'>
               <CgAwards className='about__icon' />
-              <h5>Experience</h5>
+              <h2>Experience</h2>
+              <h5>May 2022 - Oct. 2022</h5>
               <small>27 week Bootcamp (<a href="https://www.epicodus.com/">epicodus</a>)</small>
+              <h5>Oct. 2022 - present</h5>
+              <small>Full stack developer intern (<a href='https://opineschool.com'>Opine</a>)</small>
             </article>
             <article className='about__card'>
               <BsFolder2Open className='about__icon' />
@@ -32,7 +35,7 @@ const About = () => {
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste maxime omnis vel, repellat culpa dignissimos. Debitis animi impedit iusto ea rem nisi, temporibus libero sit asperiores fuga, voluptate ratione ad.
+            My name is Maxwell Alvord and I currently live in Portland Oregon. I'm excited to see where my passion for problem solving will take me as I'm open to moving for the right position. My free time is spent learning what new technologies to use as well as which ones to avoid. 
           </p>
 
           <a href="#contact" className='btn btn-primary'>Reach out!</a>
