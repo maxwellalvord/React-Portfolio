@@ -35,7 +35,7 @@ const About = () => {
           </div>
 
           <p>
-            My name is Maxwell Alvord and I currently live in Portland Oregon. I'm excited to see where my passion for problem solving will take me as I'm open to moving for the right position. My free time is spent learning what new technologies to use as well as which ones to avoid. 
+            My name is Maxwell Alvord and I currently live in Portland Oregon. I'm excited to see where my passion for problem solving will take me as I'm open to moving for the right position. If I'm not looking for a hole in the wall foodcart or playing with my dog I tend to spend my free time perusing new technology tutorials on youtube.
           </p>
 
           <a href="#contact" className='btn btn-primary'>Reach out!</a>

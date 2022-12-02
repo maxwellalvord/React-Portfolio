@@ -10,9 +10,9 @@ const data = [
   {
     id: 1,
     image: IMG1,
-    title: "Proj Title",
-    github: "https://github.com",
-    demo: "https://instagram.com"
+    title: "Inventory Tracker",
+    github: "https://github.com/maxwellalvord/Inventory-Tracker-React",
+    demo: "https://https://github.com/maxwellalvord/Inventory-Tracker-React#readme.com"
   },
   {
     id: 2,
@@ -61,7 +61,7 @@ const Portfolio = () => {
               <h3>{title}</h3>
               <div className="portfolio__item-cta">
                 <a href={github} className='btn' target={'_blank'}>Github</a>
-                <a href={demo} className='btn btn-primary' target={'_blank'}>Live Site</a>
+                <a href={demo} className='btn btn-primary' target={'_blank'}>README.md</a>
               </div>
             </article>
             )
