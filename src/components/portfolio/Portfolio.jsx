@@ -1,10 +1,8 @@
 import React from 'react'
 import './portfolio.css'
-import IMG1 from '../../assets/portfolio1.jpg'
-import IMG2 from '../../assets/portfolio2.jpg'
-import IMG3 from '../../assets/portfolio3.jpg'
-import IMG4 from '../../assets/portfolio4.jpg'
-import IMG5 from '../../assets/portfolio5.png'
+import IMG1 from '../../assets/invTracker.png'
+import IMG2 from '../../assets/Build-API.png'
+import IMG3 from '../../assets/helpqueue.PNG'
 
 const data = [
   {
@@ -17,31 +15,17 @@ const data = [
   {
     id: 2,
     image: IMG2,
-    title: "Proj Title",
-    github: "https://github.com",
-    demo: "https://instagram.com"
+    title: "Building an Api",
+    github: "https://github.com/maxwellalvord/Building-an-Api",
+    demo: "https://github.com/maxwellalvord/Building-an-Api/blob/main/README.md"
   },
   {
     id: 3,
     image: IMG3,
-    title: "Proj Title",
-    github: "https://github.com",
-    demo: "https://instagram.com"
-  },
-  {
-    id: 4,
-    image: IMG4,
-    title: "Proj Title",
-    github: "https://github.com",
-    demo: "https://instagram.com"
-  },
-  {
-    id: 5,
-    image: IMG5,
-    title: "Proj Title",
-    github: "https://github.com",
-    demo: "https://instagram.com"
-  },
+    title: "Help Queue",
+    github: "https://github.com/maxwellalvord/Hooks-and-Help-Queue",
+    demo: "https://github.com/maxwellalvord/Hooks-and-Help-Queue/blob/main/README.md"
+  }
 ]
 
 const Portfolio = () => {
