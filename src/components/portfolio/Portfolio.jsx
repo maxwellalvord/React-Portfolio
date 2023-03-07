@@ -3,6 +3,7 @@ import './portfolio.css'
 import IMG1 from '../../assets/invTracker.png'
 import IMG2 from '../../assets/Build-API.png'
 import IMG3 from '../../assets/helpqueue.PNG'
+import IMG4 from '../../assets/societyDark.PNG'
 
 const data = [
   {
@@ -25,6 +26,13 @@ const data = [
     title: "Help Queue",
     github: "https://github.com/maxwellalvord/Hooks-and-Help-Queue",
     demo: "https://github.com/maxwellalvord/Hooks-and-Help-Queue/blob/main/README.md"
+  },
+  {
+    id: 4,
+    image: IMG4,
+    title: "The Society",
+    github: "https://github.com/maxwellalvord/MERN-APP-full-package",
+    demo: "https://github.com/maxwellalvord/MERN-APP-full-package#readme"
   }
 ]
 
