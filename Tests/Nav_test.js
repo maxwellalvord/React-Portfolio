@@ -1,4 +1,4 @@
-const {By, Key, Builder} = require("selenium-webdriver");
+const {By, Key, Builder, until} = require("selenium-webdriver");
 require("chromedriver");
 
 async function test_case(){
@@ -6,7 +6,17 @@ async function test_case(){
 
   await driver.get("http://localhost:3000/");
 
+  const originalWindow = await driver.getWindowHandle();
+
   // await driver.findElement(By.name("name")).sendKeys("site running", Key.RETURN);
+
+  await driver.findElement(By.className("scroll__down")).click();
+
+  if (await driver.getCurrentUrl() === "http://localhost:3000/#contact") {
+    console.log("successScroll");
+    } else {
+      console.log("FailureScroll");
+    }
 
   await driver.findElement(By.name("about")).click();
 
@@ -48,9 +58,32 @@ async function test_case(){
       console.log("Failure5");
     }
 
-  setInterval(() => {
-    driver.quit();
-  }, 100000);
+  await driver.findElement(By.name("linkedIn")).click();
+
+  await driver.wait(
+    async () => (await driver.getAllWindowHandles()).length === 2,
+    10000
+  );
+
+  const windows = await driver.getAllWindowHandles();
+  windows.forEach(async handle => {
+    if (handle !== originalWindow) {
+      await driver.switchTo().window(handle);
+    }
+  });
+
+setInterval(async function link() {
+  if (await driver.getCurrentUrl() === "https://www.linkedin.com/in/maxwellalvord/?original_referer=http%3A%2F%2Flocalhost%3A3000%2F") {
+    console.log("successLink");
+  } else {
+    console.log("FailureLink");
+  }
+}, 5000);
+ 
+
+  // setInterval(() => {
+  //   driver.quit();
+  // }, 100000);
 }
 
 test_case();
