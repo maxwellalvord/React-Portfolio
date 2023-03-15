@@ -53,6 +53,13 @@ const Experience = () => {
                 <small className='text-light'>Intermediate</small>
               </div>
             </article>
+            <article className='experience__details'>
+              <RiCheckboxCircleFill className='experience__details-icon'/>
+              <div>
+                <h4>Selenium</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
+            </article>
           </div>
         </div>
         <div className="experience__backend">
@@ -111,6 +118,20 @@ const Experience = () => {
               <RiCheckboxCircleFill className='experience__details-icon'/>
               <div>
                 <h4>Express</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <RiCheckboxCircleFill className='experience__details-icon'/>
+              <div>
+                <h4>Mongo DB</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <RiCheckboxCircleFill className='experience__details-icon'/>
+              <div>
+                <h4>Unity</h4>
                 <small className='text-light'>Intermediate</small>
               </div>
             </article>
