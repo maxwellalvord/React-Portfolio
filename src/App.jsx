@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import About from './components/about/About'
 import Contact from './components/contact/Contact'
 import Experience from './components/experience/Experience'
@@ -8,8 +8,10 @@ import Nav from './components/nav/Nav'
 import Portfolio from './components/portfolio/Portfolio'
 
 const app = () => {
+
   return (
     <>
+      <div id=" tiles"></div>
       <Header />
       <Nav />
       <About />
@@ -19,6 +21,10 @@ const app = () => {
       <Footer />
     </>
   )
+  
 }
+
+ 
+
 
 export default app

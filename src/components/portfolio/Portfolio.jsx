@@ -1,6 +1,6 @@
 import React from 'react'
 import './portfolio.css'
-import IMG1 from '../../assets/invTracker.png'
+import IMG1 from '../../assets/ECOM-VISION.png'
 import IMG2 from '../../assets/Build-API.png'
 import IMG3 from '../../assets/helpqueue.PNG'
 import IMG4 from '../../assets/societyDark.PNG'
@@ -9,9 +9,9 @@ const data = [
   {
     id: 1,
     image: IMG1,
-    title: "Inventory Tracker",
-    github: "https://github.com/maxwellalvord/Inventory-Tracker-React",
-    demo: "https://https://github.com/maxwellalvord/Inventory-Tracker-React#readme.com"
+    title: "MERN Finance Dashboard (ECOM-VISION)",
+    github: "https://github.com/maxwellalvord/MERN-Finance-Dashboard",
+    demo: "https://github.com/maxwellalvord/MERN-Finance-Dashboard/blob/main/README.md"
   },
   {
     id: 2,

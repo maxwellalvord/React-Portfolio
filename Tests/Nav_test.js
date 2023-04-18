@@ -81,9 +81,9 @@ setInterval(async function link() {
 }, 5000);
  
 
-  // setInterval(() => {
-  //   driver.quit();
-  // }, 100000);
+  setInterval(() => {
+    driver.quit();
+  }, 6000);
 }
 
 test_case();
