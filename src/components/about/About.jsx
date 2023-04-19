@@ -24,7 +24,7 @@ const About = () => {
               <h2>Experience</h2>
               <h5>May 2022 - Oct. 2022</h5>
               <small>27 week Bootcamp (<a href="https://www.epicodus.com/">epicodus</a>)</small>
-              <h5>Oct. 2022 - present</h5>
+              <h5>Oct. 2022 - Mar. 2023</h5>
               <small>Full stack developer (<a href='https://opineschool.com'>Opine</a>)</small>
             </article>
             <article className='about__card'>
