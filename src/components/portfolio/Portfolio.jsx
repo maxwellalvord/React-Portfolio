@@ -2,7 +2,7 @@ import React from 'react'
 import './portfolio.css'
 import IMG1 from '../../assets/ECOM-VISION.png'
 import IMG2 from '../../assets/Build-API.png'
-import IMG3 from '../../assets/helpqueue.PNG'
+import IMG3 from '../../assets/HappyHomes.PNG'
 import IMG4 from '../../assets/societyDark.PNG'
 
 const data = [
@@ -23,9 +23,9 @@ const data = [
   {
     id: 3,
     image: IMG3,
-    title: "Help Queue",
-    github: "https://github.com/maxwellalvord/Hooks-and-Help-Queue",
-    demo: "https://github.com/maxwellalvord/Hooks-and-Help-Queue/blob/main/README.md"
+    title: "AirBnb Clone (Happy Homes)",
+    github: "https://github.com/maxwellalvord/AirBnbClone-Next13",
+    demo: "https://happy-homes.vercel.app"
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const Portfolio = () => {
               <h3>{title}</h3>
               <div className="portfolio__item-cta">
                 <a href={github} className='btn' target={'_blank'}>Github</a>
-                <a href={demo} className='btn btn-primary' target={'_blank'}>README.md</a>
+                <a href={demo} className='btn btn-primary' target={'_blank'}>Livesite/README.md</a>
               </div>
             </article>
             )
