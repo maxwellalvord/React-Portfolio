@@ -26,6 +26,8 @@ const About = () => {
               <small>27 week Bootcamp (<a href="https://www.epicodus.com/">epicodus</a>)</small>
               <h5>Oct. 2022 - Mar. 2023</h5>
               <small>Full stack developer (<a href='https://opineschool.com'>Opine</a>)</small>
+              <h5>August 2023 - Present</h5>
+              <small>Systems Engineer (<a href='https://www.newestech.com'>New West Technologies</a>)</small>
             </article>
             <article className='about__card'>
               <BsFolder2Open className='about__icon' />
