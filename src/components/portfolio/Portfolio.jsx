@@ -2,7 +2,7 @@ import React from 'react'
 import './portfolio.css'
 import IMG1 from '../../assets/ECOM-VISION.png'
 import IMG2 from '../../assets/Build-API.png'
-import IMG3 from '../../assets/HappyHomes.PNG'
+import IMG3 from '../../assets/Money-Manager.png'
 import IMG4 from '../../assets/societyDark.PNG'
 
 const data = [
@@ -23,9 +23,9 @@ const data = [
   {
     id: 3,
     image: IMG3,
-    title: "AirBnb Clone (Happy Homes)",
-    github: "https://github.com/maxwellalvord/AirBnbClone-Next13",
-    demo: "https://happy-homes.vercel.app"
+    title: "Money Manager",
+    github: "https://github.com/maxwellalvord/Money-Manager",
+    demo: "https://moneymanager.live"
   },
   {
     id: 4,
