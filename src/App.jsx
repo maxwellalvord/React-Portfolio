@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import About from './components/about/About'
 import Contact from './components/contact/Contact'
 import Experience from './components/experience/Experience'
@@ -6,12 +5,12 @@ import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import Nav from './components/nav/Nav'
 import Portfolio from './components/portfolio/Portfolio'
+import ScrollProgress from './components/ScrollProgress'
 
-const app = () => {
-
+const App = () => {
   return (
     <>
-      <div id=" tiles"></div>
+      <ScrollProgress />
       <Header />
       <Nav />
       <About />
@@ -21,10 +20,6 @@ const app = () => {
       <Footer />
     </>
   )
-  
 }
 
- 
-
-
-export default app
+export default App

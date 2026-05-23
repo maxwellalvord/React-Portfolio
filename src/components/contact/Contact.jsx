@@ -11,11 +11,15 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm('service_dtxl4zb', 'template_2tvx0um', form.current, '7CV7iHs4H4Sn8JO4G')
-
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    )
     e.target.reset()
   };
+
   return (
     <section id='contact'>
       <h5>Get In Touch</h5>
@@ -27,13 +31,13 @@ const Contact = () => {
             <AiOutlineMail className='contact__option-icon'/>
             <h4>Email</h4>
             <h5>maxwellalvord@gmail.com</h5>
-            <a href="mailto:maxwellalvord@gmail.com" target="_blank">Send a message</a>
+            <a href="mailto:maxwellalvord@gmail.com" target="_blank" rel="noopener noreferrer">Send a message</a>
           </article>
           <article className='contact__option'>
             <AiOutlineIssuesClose className='contact__option-icon'/>
             <h4>Github issues page</h4>
             <h5>A Link!</h5>
-            <a href="https://github.com/maxwellalvord/React-Portfolio/issues" target="_blank">Send a message</a>
+            <a href="https://github.com/maxwellalvord/React-Portfolio/issues" target="_blank" rel="noopener noreferrer">Send a message</a>
           </article>
           <article className='contact__option'>
             <BsFillTelephoneFill className='contact__option-icon'/>
@@ -42,11 +46,10 @@ const Contact = () => {
             <a href="tel:5038309753">5038309753</a>
           </article>
         </div>
-        {/* END OF CONTACT OPTIONS */}
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name='name' placeholder='Your Full Name' required />
           <input type="email" name='email' placeholder='Your Email' required />
-          <textarea name='message' rows="7" placeholder='Your Message' required ></textarea>
+          <textarea name='message' rows="7" placeholder='Your Message' required></textarea>
           <button type='submit' className='btn btn-primary'>Send Message</button>
         </form>
       </div>

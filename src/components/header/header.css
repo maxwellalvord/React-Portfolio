@@ -10,7 +10,45 @@ header {
   position: relative;
 }
 
-/* =========================== CTA ==================== */
+.header__container h5 {
+  color: var(--color-light);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.header__container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin: 0.3rem 0;
+}
+
+.header__container .text-light {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.typewriter {
+  min-height: 1.5em;
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--color-primary);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 .cta {
   margin-top: 2.5rem;
@@ -18,8 +56,6 @@ header {
   justify-content: center;
   gap: 1.2rem;
 }
-
-/* =========================== HEADER SOCIALS ==================== */
 
 .header__socials {
   display: flex;
@@ -31,17 +67,26 @@ header {
   bottom: 3rem;
 }
 
+.header__socials a {
+  font-size: 1.1rem;
+  color: var(--color-light);
+  transition: var(--transition);
+}
+
+.header__socials a:hover {
+  color: var(--color-primary);
+  transform: scale(1.2);
+}
+
 .header__socials::after {
   content: '';
   width: 1px;
   height: 2rem;
-  background: var(--color-primary);
+  background: var(--gradient-primary);
 }
 
-/* ====================== ME ==================== */
-
 .me {
-  background: linear-gradient(var(--color-primary), transparent);
+  background: linear-gradient(180deg, var(--color-primary) 0%, rgba(192, 132, 252, 0.4) 60%, transparent 100%);
   width: 22rem;
   height: 30rem;
   position: absolute;
@@ -52,10 +97,8 @@ header {
   padding-top: 5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  box-shadow: 0 0 80px rgba(125, 211, 252, 0.15);
 }
-
-
-/* ====================== SCROLL DOWN ==================== */
 
 .scroll__down {
   position: absolute;
@@ -63,11 +106,14 @@ header {
   bottom: 5rem;
   transform: rotate(90deg);
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--color-light);
+  letter-spacing: 0.1em;
 }
 
-
-/* ========================= Media Queries (MEDIUM Devices) ================== */
+.scroll__down:hover {
+  color: var(--color-primary);
+}
 
 @media screen and (max-width: 1024px) {
   header {
@@ -75,11 +121,13 @@ header {
   }
 }
 
-/* ========================= Media Queries (SMALL Devices) ================== */
-
 @media screen and (max-width: 600px) {
   header {
     height: 100vh;
+  }
+
+  .header__container h1 {
+    font-size: 2.2rem;
   }
 
   .header__socials,
