@@ -77,7 +77,7 @@ const Experience = () => {
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill className='experience__details-icon'/>
-              <div><h4>Next.js</h4><small className='text-light'>Intermediate</small></div>
+              <div><h4>Next.js</h4><small className='text-light'>Experienced</small></div>
             </article>
             <article className='experience__details'>
               <RiCheckboxCircleFill className='experience__details-icon'/>
@@ -90,6 +90,10 @@ const Experience = () => {
             <article className='experience__details'>
               <RiCheckboxCircleFill className='experience__details-icon'/>
               <div><h4>Golang</h4><small className='text-light'>Intermediate</small></div>
+            </article>
+            <article className='experience__details'>
+              <RiCheckboxCircleFill className='experience__details-icon'/>
+              <div><h4>NeonDB</h4><small className='text-light'>Experienced</small></div>
             </article>
           </div>
         </motion.div>
@@ -128,6 +132,10 @@ const Experience = () => {
             <article className='experience__details'>
               <RiCheckboxCircleFill className='experience__details-icon experience__details-icon--infra'/>
               <div><h4>Unity / C#</h4><small className='text-light'>Intermediate</small></div>
+            </article>
+            <article className='experience__details'>
+              <RiCheckboxCircleFill className='experience__details-icon experience__details-icon--infra'/>
+              <div><h4>Vercel</h4><small className='text-light'>Experienced</small></div>
             </article>
           </div>
         </motion.div>

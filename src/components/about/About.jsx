@@ -54,6 +54,8 @@ const About = () => {
               <small>Live budgeting website (Money Manager)</small>
               <br />
               <small>HomeLab — Proxmox · Docker · pfSense · Linux</small>
+              <br />
+              <small>Ascoé — Currently in Beta, coming to the iOS App Store</small>
             </article>
           </div>
 

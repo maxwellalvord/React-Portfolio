@@ -1,7 +1,7 @@
 import React from 'react'
 import './portfolio.css'
 import IMG1 from '../../assets/ECOM-VISION.png'
-import IMG2 from '../../assets/Build-API.png'
+import IMG2 from '../../assets/ascoe.png'
 import IMG3 from '../../assets/Money-Manager.png'
 import IMG4 from '../../assets/societyDark.PNG'
 import { motion } from 'framer-motion'
@@ -21,12 +21,15 @@ const data = [
   {
     id: 2,
     image: IMG2,
-    title: "Building an API",
-    subtitle: null,
-    description: "RESTful API built with Node and Express, serving structured JSON data with full CRUD operations.",
-    tags: ["Node.js", "Express", "REST API"],
-    github: "https://github.com/maxwellalvord/Building-an-Api",
-    demo: "https://github.com/maxwellalvord/Building-an-Api/blob/main/README.md"
+    imagePosition: 'center',
+    title: "Ascoé",
+    subtitle: "Live",
+    description: "A cross-gender Q&A platform where men and women anonymously ask and curate honest answers. iOS app available on TestFlight.",
+    tags: ["Next.js", "React", "NeonDB", "Clerk", "Vercel"],
+    github: "https://testflight.apple.com/join/UJrU7deG",
+    githubLabel: "TestFlight",
+    demo: "https://www.ascoe.space",
+    demoLabel: "Live Site"
   },
   {
     id: 3,
@@ -72,10 +75,10 @@ const Portfolio = () => {
         whileInView="visible"
         viewport={{ once: false, amount: 0.1 }}
       >
-        {data.map(({ id, image, title, subtitle, description, tags, github, demo }) => (
+        {data.map(({ id, image, imagePosition, title, subtitle, description, tags, github, githubLabel, demo, demoLabel }) => (
           <motion.article key={id} className='portfolio__item' variants={itemVariants}>
             <div className="portfolio__item-image">
-              <img src={image} alt={title} />
+              <img src={image} alt={title} style={imagePosition ? { objectPosition: imagePosition } : undefined} />
             </div>
 
             <div className="portfolio__item-body">
@@ -95,10 +98,10 @@ const Portfolio = () => {
               </div>
 
               <div className="portfolio__item-cta">
-                <a href={github} className='btn' target='_blank' rel='noopener noreferrer'>GitHub</a>
+                <a href={github} className='btn' target='_blank' rel='noopener noreferrer'>{githubLabel || 'GitHub'}</a>
                 {demo && (
                   <a href={demo} className='btn btn-primary' target='_blank' rel='noopener noreferrer'>
-                    {demo.includes('moneymanager.live') ? 'Live Site' : 'README'}
+                    {demoLabel || (demo.includes('moneymanager.live') ? 'Live Site' : 'README')}
                   </a>
                 )}
               </div>
