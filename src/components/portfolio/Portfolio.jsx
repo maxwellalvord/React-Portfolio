@@ -1,114 +1,123 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import './portfolio.css'
-import IMG1 from '../../assets/ECOM-VISION.png'
-import IMG2 from '../../assets/ascoe.png'
-import IMG3 from '../../assets/Money-Manager.png'
-import IMG4 from '../../assets/societyDark.PNG'
-import { motion } from 'framer-motion'
-import { containerVariants, itemVariants, fadeUp } from '../../utils/animations'
+import { motion, AnimatePresence } from 'framer-motion'
+import { HiOutlineLockClosed } from 'react-icons/hi'
+import { containerVariants, itemVariants } from '../../utils/animations'
+import SectionHeading from '../SectionHeading'
+import { projects, mrrResults } from '../../data/projects'
+import CaseStudy from './CaseStudy'
 
-const data = [
-  {
-    id: 1,
-    image: IMG1,
-    title: "MERN Finance Dashboard",
-    subtitle: "ECOM-VISION",
-    description: "Full-stack analytics dashboard with regression models and recharts data visualization.",
-    tags: ["MongoDB", "Express", "React", "Node.js"],
-    github: "https://github.com/maxwellalvord/MERN-Finance-Dashboard",
-    demo: "https://github.com/maxwellalvord/MERN-Finance-Dashboard/blob/main/README.md"
-  },
-  {
-    id: 2,
-    image: IMG2,
-    imagePosition: 'center',
-    title: "Ascoé",
-    subtitle: "Live",
-    description: "A cross-gender Q&A platform where men and women anonymously ask and curate honest answers. iOS app available on TestFlight.",
-    tags: ["Next.js", "React", "NeonDB", "Clerk", "Vercel"],
-    github: "https://testflight.apple.com/join/UJrU7deG",
-    githubLabel: "TestFlight",
-    demo: "https://www.ascoe.space",
-    demoLabel: "Live Site"
-  },
-  {
-    id: 3,
-    image: IMG3,
-    title: "Money Manager",
-    subtitle: "Live",
-    description: "Real-time budgeting web app for tracking income and expenses with persistent data.",
-    tags: ["React", "Firebase", "CSS"],
-    github: "https://github.com/maxwellalvord/Money-Manager",
-    demo: "https://moneymanager.live"
-  },
-  {
-    id: 4,
-    image: IMG4,
-    title: "The Society",
-    subtitle: null,
-    description: "Full-stack MERN social platform with JWT authentication, user profiles, and post management.",
-    tags: ["MongoDB", "React", "Node.js", "JWT"],
-    github: "https://github.com/maxwellalvord/MERN-APP-full-package",
-    demo: "https://github.com/maxwellalvord/MERN-APP-full-package#readme"
+const agentRoles = ['PM', 'Dev', 'Docs', 'Security & Testing', 'PM (Me)']
+
+const AgentsVisual = () => (
+  <div className="portfolio__visual portfolio__visual--agents" aria-hidden="true">
+    <div className="agents__flow">
+      {agentRoles.map((role, i) => (
+        <React.Fragment key={role}>
+          <span className={`agents__node${role === 'Security & Testing' ? ' agents__node--gate' : ''}`}>{role}</span>
+          {i < agentRoles.length - 1 && <span className="agents__arrow" />}
+        </React.Fragment>
+      ))}
+    </div>
+    <span className="agents__cycle">↻ The cycle repeats · Internal Affairs audits on demand</span>
+    <span className="agents__lock"><HiOutlineLockClosed /> Private repository</span>
+  </div>
+)
+
+const MrrVisual = () => (
+  <div className="portfolio__visual portfolio__visual--mrr">
+    <p className="mrr__caption">Mean Reciprocal Rank, 19-question golden set</p>
+    <ul className="mrr__bars">
+      {mrrResults.map(({ label, value, best }) => (
+        <li key={label} className={best ? 'mrr__row mrr__row--best' : 'mrr__row'}>
+          <span className="mrr__label">{label}</span>
+          <span className="mrr__track">
+            <span className="mrr__fill" style={{ width: `${value * 100}%` }} />
+          </span>
+          <span className="mrr__value">{value.toFixed(3)}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)
+
+const Visual = ({ project }) => {
+  if (project.visual === 'agents') return <AgentsVisual />
+  if (project.visual === 'mrr') return <MrrVisual />
+  return (
+    <div className="portfolio__item-image">
+      <img
+        src={project.image}
+        alt={project.title}
+        style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+      />
+    </div>
+  )
+}
+
+const ProjectLink = ({ link }) => {
+  const className = link.primary ? 'btn btn-primary' : 'btn'
+  if (link.internal) {
+    return <a href={link.href} className={className}>{link.label}</a>
   }
-]
+  return <a href={link.href} className={className} target='_blank' rel='noopener noreferrer'>{link.label}</a>
+}
 
 const Portfolio = () => {
+  const [openProject, setOpenProject] = useState(null)
+  const closeCaseStudy = useCallback(() => setOpenProject(null), [])
+
   return (
     <section id='portfolio'>
-      <motion.h5
-        variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: false }}
-      >
-        My Recent Work
-      </motion.h5>
-      <motion.h2
-        variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: false }}
-        transition={{ delay: 0.1 }}
-      >
-        Portfolio
-      </motion.h2>
+      <SectionHeading eyebrow="My Recent Work" title="Portfolio" />
 
       <motion.div
         className='container portfolio__container'
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
+        viewport={{ once: false, amount: 0.05 }}
       >
-        {data.map(({ id, image, imagePosition, title, subtitle, description, tags, github, githubLabel, demo, demoLabel }) => (
-          <motion.article key={id} className='portfolio__item' variants={itemVariants}>
-            <div className="portfolio__item-image">
-              <img src={image} alt={title} style={imagePosition ? { objectPosition: imagePosition } : undefined} />
-            </div>
+        {projects.map((project) => (
+          <motion.article
+            key={project.id}
+            className={`portfolio__item${project.wide ? ' portfolio__item--wide' : ''}`}
+            variants={itemVariants}
+          >
+            <Visual project={project} />
 
             <div className="portfolio__item-body">
               <div className="portfolio__item-header">
                 <h3>
-                  {title}
-                  {subtitle && <span className="portfolio__subtitle">{subtitle}</span>}
+                  {project.title}
+                  {project.subtitle && <span className="portfolio__subtitle">{project.subtitle}</span>}
                 </h3>
               </div>
 
-              <p className="portfolio__description">{description}</p>
+              <p className="portfolio__description">{project.description}</p>
 
               <div className="portfolio__tags">
-                {tags.map(tag => (
+                {project.tags.map(tag => (
                   <span key={tag} className="portfolio__tag">{tag}</span>
                 ))}
               </div>
 
               <div className="portfolio__item-cta">
-                <a href={github} className='btn' target='_blank' rel='noopener noreferrer'>{githubLabel || 'GitHub'}</a>
-                {demo && (
-                  <a href={demo} className='btn btn-primary' target='_blank' rel='noopener noreferrer'>
-                    {demoLabel || (demo.includes('moneymanager.live') ? 'Live Site' : 'README')}
-                  </a>
+                {project.caseStudy && (
+                  <button type="button" className='btn btn-primary' onClick={() => setOpenProject(project)}>
+                    Case Study
+                  </button>
                 )}
+                {project.links.map(link => <ProjectLink key={link.label} link={link} />)}
               </div>
             </div>
           </motion.article>
         ))}
       </motion.div>
+
+      <AnimatePresence>
+        {openProject && <CaseStudy project={openProject} onClose={closeCaseStudy} />}
+      </AnimatePresence>
     </section>
   )
 }

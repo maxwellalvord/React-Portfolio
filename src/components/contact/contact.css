@@ -81,6 +81,29 @@ input::placeholder, textarea::placeholder {
   color: var(--color-light);
 }
 
+form button {
+  font-family: inherit;
+}
+
+form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+.contact__status {
+  font-size: 0.85rem;
+  min-height: 1.4em;
+}
+
+.contact__status--sent {
+  color: #86efac;
+}
+
+.contact__status--error {
+  color: #fca5a5;
+}
+
 @media screen and (max-width: 1024px) {
   .container.contact__container {
     grid-template-columns: 1fr;
@@ -92,4 +115,14 @@ input::placeholder, textarea::placeholder {
   .container.contact__container {
     width: var(--container-width-sm);
   }
+}
+
+/* Honeypot field: kept out of sight and out of the layout */
+.contact__hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }

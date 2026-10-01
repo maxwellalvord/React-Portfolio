@@ -4,22 +4,13 @@ import ME from '../../assets/sarahmax.jpg'
 import { CgAwards } from 'react-icons/cg'
 import { BsFolder2Open } from 'react-icons/bs'
 import { motion } from 'framer-motion'
-import { containerVariants, itemVariants, fadeUp } from '../../utils/animations'
+import { containerVariants, itemVariants } from '../../utils/animations'
+import SectionHeading from '../SectionHeading'
 
 const About = () => {
   return (
     <section id='about'>
-      <motion.h5
-        variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: false }}
-      >
-        Get To Know
-      </motion.h5>
-      <motion.h2
-        variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: false }}
-        transition={{ delay: 0.1 }}
-      >
-        About Me
-      </motion.h2>
+      <SectionHeading eyebrow="Get To Know" title="About Me" />
 
       <motion.div
         className='container about__container'
@@ -30,7 +21,7 @@ const About = () => {
       >
         <motion.div className="about__me" variants={itemVariants}>
           <div className="about__me-image">
-            <img src={ME} alt='About' />
+            <img src={ME} alt='Maxwell Alvord standing in front of a waterfall' />
           </div>
         </motion.div>
 
@@ -51,11 +42,13 @@ const About = () => {
               <h5>Projects</h5>
               <small>70+ completed</small>
               <br />
-              <small>Live budgeting website (Money Manager)</small>
+              <small>Ascoé: live on the web and the iOS App Store</small>
               <br />
-              <small>HomeLab — Proxmox · Docker · pfSense · Linux</small>
+              <small>Money Manager: live web app plus native Expo app</small>
               <br />
-              <small>Ascoé — Currently in Beta, coming to the iOS App Store</small>
+              <small>Small-Business Site Frame: open-source template</small>
+              <br />
+              <small>Agent Team: multi-agent dev workflow (private)</small>
             </article>
           </div>
 

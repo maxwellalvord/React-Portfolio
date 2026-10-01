@@ -94,8 +94,287 @@
 
 .portfolio__item-cta {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 0.4rem;
+}
+
+.portfolio__item-cta button {
+  font-family: inherit;
+}
+
+/* ---------- Wide card (spans both columns) ---------- */
+.portfolio__item--wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+}
+
+.portfolio__item--wide > .portfolio__visual {
+  flex: 0 0 48%;
+  height: auto;
+}
+
+/* ---------- Built-in visuals ---------- */
+.portfolio__visual {
+  height: 220px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.6rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(125, 211, 252, 0.12), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(192, 132, 252, 0.12), transparent 55%),
+    var(--color-bg-variant);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.agents__flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.agents__node {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  background: rgba(125, 211, 252, 0.08);
+  color: var(--color-primary);
+}
+
+.agents__node--gate {
+  border-color: rgba(192, 132, 252, 0.5);
+  background: rgba(192, 132, 252, 0.12);
+  color: var(--color-secondary);
+}
+
+.agents__arrow {
+  width: 14px;
+  height: 1px;
+  background: var(--color-light);
+  position: relative;
+}
+
+.agents__arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  border-left: 5px solid var(--color-light);
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+}
+
+.agents__cycle {
+  margin-top: 0.9rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--color-light);
+}
+
+.agents__lock {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-light);
+  white-space: nowrap;
+}
+
+.mrr__caption {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-light);
+  margin-bottom: 1rem;
+}
+
+.mrr__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mrr__row {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr 3rem;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.78rem;
+}
+
+.mrr__label {
+  color: var(--color-light);
+}
+
+.mrr__track {
+  height: 0.6rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.mrr__fill {
+  display: block;
+  height: 100%;
+  border-radius: 1rem;
+  background: rgba(125, 211, 252, 0.55);
+}
+
+.mrr__row--best .mrr__fill {
+  background: var(--gradient-primary);
+}
+
+.mrr__row--best .mrr__label,
+.mrr__value {
+  color: var(--color-white);
+}
+
+.mrr__value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* ---------- Case study dialog ---------- */
+.case__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(5, 5, 14, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 4rem 1rem;
+}
+
+.case__dialog {
+  position: relative;
+  width: min(760px, 100%);
+  background: var(--color-bg-variant);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2.6rem 2.8rem;
+  box-shadow: var(--glass-shadow), var(--gradient-glow);
+}
+
+.case__close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.case__close:hover,
+.case__close:focus-visible {
+  color: var(--color-white);
+  background: rgba(125, 211, 252, 0.15);
+}
+
+.case__close:focus-visible,
+.portfolio__item-cta .btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.case__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.case__dialog h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.case__meta {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  margin-bottom: 0.6rem;
+}
+
+.case__meta div {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0.8rem;
+  font-size: 0.82rem;
+}
+
+.case__meta dt {
+  color: var(--color-light);
+}
+
+.case__dialog h4 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.case__dialog p,
+.case__list li {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+}
+
+.case__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.case__list li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.case__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+}
+
+.case__cta {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -103,11 +382,41 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.4rem;
   }
+
+  .portfolio__item--wide {
+    flex-direction: column;
+  }
+
+  .portfolio__item--wide > .portfolio__visual {
+    flex: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .portfolio__container {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+  }
+
+  .mrr__row {
+    grid-template-columns: 7rem 1fr 2.6rem;
+    font-size: 0.72rem;
+  }
+
+  .portfolio__visual--mrr {
+    height: auto;
+  }
+
+  .case__backdrop {
+    padding: 1rem 0.75rem;
+  }
+
+  .case__dialog {
+    padding: 2.2rem 1.4rem;
+  }
+
+  .case__meta div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
   }
 }
